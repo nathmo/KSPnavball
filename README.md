@@ -1,6 +1,6 @@
 # KSPnavball
 This is a mechanical navball for a custom KSP gamepad
-![KSP navball render](/image/3DRender.png")
+![KSP navball render](/image/3DRender.png)
 
 # Hardware
 |QTY|Name|Link|total price|
