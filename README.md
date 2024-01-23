@@ -20,3 +20,5 @@ the plastic part should not require much support and can be printed on a 16 x 16
 
 # Software
 todo
+https://kerbalsimpitrevamped-arduino.readthedocs.io/en/latest/payloadstructs.html#structvessel_pointing_message
+https://www.instructables.com/KerbalController-a-Custom-Control-Panel-for-Rocket/
