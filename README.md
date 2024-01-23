@@ -18,6 +18,7 @@ the plexiglass windows should be laser cuted in a 3mm sheet, marking can be adde
 
 the plastic part should not require much support and can be printed on a 16 x 16 [cm] bed
 
+the navball is designed so that the magnet can be placed during the print.
 # Software
 todo
 https://kerbalsimpitrevamped-arduino.readthedocs.io/en/latest/payloadstructs.html#structvessel_pointing_message
