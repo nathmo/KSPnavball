@@ -11,8 +11,8 @@ This is a mechanical navball for a custom KSP gamepad
 |2X |Hbridge DRV8833 |https://www.aliexpress.com/item/1005006444609771.html|      2.5$|
 |1X |3 axis magnetometer |https://www.aliexpress.com/item/1005004853135350.html|  4.5$ |
 |1X |magnet cylinder 10x2mm |https://www.aliexpress.com/item/1005006362930902.html| 2$ |
-
-Total = ~27.5 $ + 3D printed part + transparent window
+|1X |arduino nano |https://www.aliexpress.com/item/1005005702204423.html|2.5$|
+Total = ~30 $ + 3D printed part + transparent window
 
 the plexiglass windows should be laser cuted in a 3mm sheet, marking can be added on top
 
