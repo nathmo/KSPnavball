@@ -24,10 +24,10 @@ you will find the required file to print in the folder ToPrint, same for the fol
 need to document
 
 # Software
-todo
 kinematic
 ![image](https://github.com/nathmo/KSPnavball/assets/15912256/4f9a5b8f-ef3f-4d26-8354-47d3a82bea70)
 
+https://kerbalsimpitrevamped-arduino.readthedocs.io/en/latest/payloadstructs.html#_CPPv421vesselPointingMessage
 
 https://kerbalsimpitrevamped-arduino.readthedocs.io/en/latest/payloadstructs.html#structvessel_pointing_message
 https://www.instructables.com/KerbalController-a-Custom-Control-Panel-for-Rocket/
