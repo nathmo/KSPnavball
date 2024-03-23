@@ -3,6 +3,8 @@ This is a mechanical navball for a custom KSP gamepad
 ![image](https://github.com/nathmo/KSPnavball/assets/15912256/69ea6f02-c501-4f50-b61d-37bcfbf82153)
 ![image](https://github.com/nathmo/KSPnavball/assets/15912256/d7e6c4aa-0ebb-4162-b684-228de8cad1dc)
 
+the current status :
+![image](https://github.com/nathmo/KSPnavball/assets/15912256/280c12f4-b4f9-488a-9c26-14fd3736ca9e)
 
 # Hardware
 |QTY|Name|Link|total price|
