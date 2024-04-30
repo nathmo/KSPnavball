@@ -22,6 +22,9 @@ struct EulerAngles {
 Quaternion navballCurrentAttitude; // global variable with the current navball orientation
 Quaternion shipAttitude; // global variable with the ship/goal orientation
 int displayMODE=0; // select what to display on the navball (see the handler at the bottom)
+float debugHeading;
+float debugPitch;
+float debugRoll;
 
 float degreesToRadians(float degrees) {
     return degrees * (PI / 180.0);
@@ -197,6 +200,7 @@ void setup() {
   // Display a message on screen in KSP
   if (mySimpit.connectedToKSP2()) mySimpit.printToKSP(F("navball connected to KSP2"), PRINT_TO_SCREEN);
   else mySimpit.printToKSP(F("navball connected to KSP1"), PRINT_TO_SCREEN);
+  
   mySimpit.inboundHandler(messageHandler);
 
   // | Vessel Movement/Position | TODO find what is really required
@@ -212,21 +216,27 @@ void setup() {
 }
 
 void loop() {
+  mySimpit.update();
+  float coeffA, coeffB, coeffC;
   //the global variable are update with from the message handler
   if(!areQuaternionsClose(shipAttitude,navballCurrentAttitude)){ // we only move the ball if there is a significant difference between the two value.
-  // we compute the difference with the current navball attitude
-  Quaternion toRotate = rotation_between_quaternions(shipAttitude, navballCurrentAttitude);
-  // we project to get how much need to rotate each motor
-  float coeffA, coeffB, coeffC;
-  projectQuaternion(toRotate, coeffA, coeffB, coeffC);
-  set_motor_pwm(coeffA, 'A');
-  set_motor_pwm(coeffB, 'B');
-  set_motor_pwm(coeffC, 'C');
-  // wait a set amount of time and stop.
-  delay(2000); // calibrate with motor speed so that it can do one full rotation (or find better scheme)
-  stop_all_motor();
-  navballCurrentAttitude = shipAttitude;
+    // we compute the difference with the current navball attitude
+    Quaternion toRotate = rotation_between_quaternions(shipAttitude, navballCurrentAttitude);
+    // we project to get how much need to rotate each motor
+    projectQuaternion(shipAttitude, coeffA, coeffB, coeffC);
+
+    set_motor_pwm(coeffA, 'A');
+    set_motor_pwm(coeffB, 'B');
+    set_motor_pwm(coeffC, 'C');
+    // wait a set amount of time and stop.
+    delay(2000); // calibrate with motor speed so that it can do one full rotation (or find better scheme)
+    stop_all_motor();
+    navballCurrentAttitude = shipAttitude;
   }
+  mySimpit.printToKSP("Heading: " + String(coeffA), PRINT_TO_SCREEN);
+  mySimpit.printToKSP("Pitch: " + String(coeffB), PRINT_TO_SCREEN);
+  mySimpit.printToKSP("Roll: " + String(coeffC), PRINT_TO_SCREEN);
+  delay(1000);
 }
 
 void messageHandler(byte messageType, byte msg[], byte msgSize) {
@@ -241,6 +251,10 @@ void messageHandler(byte messageType, byte msg[], byte msgSize) {
           shipatitudeRADIAN.pitch = degreesToRadians(vesselPointingMsg.pitch);
           shipatitudeRADIAN.roll = degreesToRadians(vesselPointingMsg.roll);
           shipAttitude = eulerToQuaternion(shipatitudeRADIAN.heading, shipatitudeRADIAN.pitch, shipatitudeRADIAN.roll);
+          
+          debugHeading = shipatitudeRADIAN.heading;
+          debugPitch = shipatitudeRADIAN.pitch;
+          debugRoll = shipatitudeRADIAN.roll;
           } else if (displayMODE==1){
           shipatitudeRADIAN.heading = degreesToRadians(vesselPointingMsg.orbitalVelocityHeading);
           shipatitudeRADIAN.pitch = degreesToRadians(vesselPointingMsg.orbitalVelocityPitch);
