@@ -225,9 +225,9 @@ void loop() {
     // we project to get how much need to rotate each motor
     projectQuaternion(shipAttitude, coeffA, coeffB, coeffC);
 
-    set_motor_pwm(coeffA, 'A');
-    set_motor_pwm(coeffB, 'B');
-    set_motor_pwm(coeffC, 'C');
+    set_motor_pwm(coeffA*255, 'A');
+    set_motor_pwm(coeffB*255, 'B');
+    set_motor_pwm(coeffC*255, 'C');
     // wait a set amount of time and stop.
     delay(2000); // calibrate with motor speed so that it can do one full rotation (or find better scheme)
     stop_all_motor();
