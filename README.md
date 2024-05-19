@@ -3,7 +3,10 @@ This is a mechanical navball for a custom KSP gamepad
 ![image](https://github.com/nathmo/KSPnavball/assets/15912256/69ea6f02-c501-4f50-b61d-37bcfbf82153)
 ![image](https://github.com/nathmo/KSPnavball/assets/15912256/d7e6c4aa-0ebb-4162-b684-228de8cad1dc)
 
-the current status :
+# Current state
+currently it can be assembled but the wheel have nylon wheel and are too slippery. I'm experimenting with wheel made out of TPU but I need something even more rubbery and sticky. 
+Regarding the software the main idea is here and the ball move but due to the slippage it's hard to tell if the code is doing it's job or if I fucked up the math to get the transform. (plus it definitely need some tunning)
+anyways, feel free to build it and help me iron out the kink :)
 ![image](https://github.com/nathmo/KSPnavball/assets/15912256/280c12f4-b4f9-488a-9c26-14fd3736ca9e)
 
 # Hardware
