@@ -53,10 +53,10 @@ To compute the required motor commande $\alpha_1, \alpha_2, \alpha_3$ we need to
 ### Find the required rotation
 this is solved using [quaternion](https://en.wikipedia.org/wiki/Quaternion). We know two things :
 1) the ball current orientation in the form of a unitary quaternion $(c_0, c_1, c_2, c_3)$ and
-2) the target orientation in the form of a unitary quaternion $t_0, t_1, t_2, t_3$
+2) the target orientation in the form of a unitary quaternion $(t_0, t_1, t_2, t_3)$
 
 from theses we know that there must exist a unitary quaternion such that $q \cdot c = t $ and thus we can deduce $q = tc^{-1}$
-$c^{-1}$ being the conjugate of c, compute as $c^{-1}=(c_0, -c_1, -c_2, -c_3)$. unitary mean that the norm $\sqrt{c_0^2+c_1^2+c_2^2+c_3^2}$ of the quaternion is equal to 1.
+$c^{-1}$ being the conjugate of c, compute as $c^{-1}=(c_0, -c_1, -c_2, -c_3)$. unitary mean that the norm $c_0^2+c_1^2+c_2^2+c_3^2$ of the quaternion is equal to 1.
 in practice this is compute like this :
 
 $$
@@ -105,7 +105,7 @@ u_3 = \begin{bmatrix}
 \end{bmatrix}.
 $$
 
-we know that there must be a vector $\alpha$ such that \mathbf{M} \alpha = \mathbf{w}, where $\alpha$ are the "ammount" projected on each wheel, $w$ is the rotation axis found previously using quaternion. $M$ is the matrix made from $\mathbf{M} = \begin{bmatrix} \mathbf{u}_1 & \mathbf{u}_2 & \mathbf{u}_3 \end{bmatrix}$
+we know that there must be a vector $\alpha$ such that $\mathbf{M} \alpha = \mathbf{w}$, where $\alpha$ are the "ammount" projected on each wheel, $w$ is the rotation axis found previously using quaternion. $M$ is the matrix made from $\mathbf{M} = \begin{bmatrix} \mathbf{u}_1 & \mathbf{u}_2 & \mathbf{u}_3 \end{bmatrix}$
 
 thus if we invert the matrix M we get :
 $$
