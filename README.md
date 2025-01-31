@@ -124,7 +124,7 @@ Given $\mathbf{q} = (q_0, q_1, q_2, q_3)$,
 
 Rotation angle: $\theta = 2 \arccos(q_0)$
 
-Rotation axis (normalized): $\mathbf{v} = \frac{1}{\sqrt{1 - q_0^2}} \begin{bmatrix} q_1 \\ q_2 \\ q_3 \end{bmatrix}$
+Rotation axis (normalized): $v = \frac{1}{\sqrt{1 - q_0^2}} \begin{bmatrix} q_1 \\ q_2 \\ q_3 \end{bmatrix}$
 
 Rotation vector: $w = \theta \mathbf{v}$
 
