@@ -108,29 +108,29 @@ $$
 we know that there must be a vector $\alpha$ such that $\mathbf{M} \alpha = \mathbf{w}$, where $\alpha$ are the "ammount" projected on each wheel, $w$ is the rotation axis found previously using quaternion. $M$ is the matrix made from $\mathbf{M} = \begin{bmatrix} \mathbf{u}_1 & \mathbf{u}_2 & \mathbf{u}_3 \end{bmatrix}$
 
 thus if we invert the matrix M we get :
-$$
- = \frac{1}{9} \begin{bmatrix}
+
+$$M = \frac{1}{9} \begin{bmatrix}
 10 & -2 & -2 \\
 -2 & 10 & -2 \\
 -2 & -2 & 10
-\end{bmatrix}.
-$$
+\end{bmatrix}.$$
+
 this matrix is computed once and stored in the code and the problem can now be easily solved using a matrix product $\alpha = \mathbf{M}^{-1}\mathbf{w}$
 
 Now we convert the Quaternion to Rotation Vector to get w
 
-$$
-\text{Given } \mathbf{q} = (q_0, q_1, q_2, q_3),
 
-\begin{aligned}
-\text{Rotation angle:} \\
-\theta &= 2 \arccos(q_0). \\
-\text{Rotation axis (normalized):} \\
-\mathbf{v} &= \frac{1}{\sqrt{1 - q_0^2}} \begin{bmatrix} q_1 \\ q_2 \\ q_3 \end{bmatrix}. \\
-\text{Rotation vector:} \\
-\mathbf{w} &= \theta \mathbf{v}.
-\end{aligned}
-$$
+Given $\mathbf{q} = (q_0, q_1, q_2, q_3)$,
+
+Rotation angle:
+$$\theta &= 2 \arccos(q_0). \\$$
+
+Rotation axis (normalized):
+$$\mathbf{v} &= \frac{1}{\sqrt{1 - q_0^2}} \begin{bmatrix} q_1 \\ q_2 \\ q_3 \end{bmatrix}. \\$$
+
+Rotation vector:
+$$\mathbf{w} &= \theta \mathbf{v}.$$
+
 (we get w by encoding the ammoung of rotatation into v the unitary axis vector.
 
 
